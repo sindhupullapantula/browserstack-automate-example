@@ -1,0 +1,38 @@
+{
+  "name": "sindhu-automate-assignment",
+  "version": "0.0.1",
+  "description": "Sindhu-automate-assignment",
+  "scripts": {
+    "mocha_localSelenium-test": "node_modules/mocha/bin/mocha test/mocha_localSelenium_test.js",
+    "mocha-remoteSelenium-test": "node_modules/mocha/bin/mocha test/mocha_remoteSelenium_test.js",
+    "mocha-localHub-test": "browserstack-node-sdk mocha test/mocha_localHub_bs_test.js --timeout=60000",
+    "mocha-remoteHub-test": "browserstack-node-sdk mocha test/mocha_remoteHub_bs_test.js --timeout=60000",
+    "postinstall": "npm update browserstack-node-sdk"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://"
+  },
+  "keywords": [
+    "mocha",
+    "browserstack",
+    "selenium",
+    "automate",
+    "examples"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "browserstack-local": "^1.4.8",
+    "mocha": "^9.2.2",
+    "selenium-webdriver": "4.1.2"
+  },
+  "devDependencies": {
+    "browserstack-node-sdk": "latest"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "author": "Sindhu P."
+}
