@@ -5,6 +5,9 @@ stages {
         steps {
                 sh 'npm install'
                 sh 'npm run mocha_localSelenium-test'
+                sh 'npm run mocha-remoteSelenium-test'
+                sh 'npm run mocha-localHub-test'
+                sh 'npm run mocha-remoteHub-test'
             }
         }
     }
