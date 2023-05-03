@@ -7,9 +7,10 @@
     "mocha-remoteSelenium-test": "node_modules/mocha/bin/mocha test/mocha_remoteSelenium_test.js",
     "mocha-localHub-test": "browserstack-node-sdk mocha test/mocha_localHub_bs_test.js --timeout=60000",
     "mocha-remoteHub-test": "browserstack-node-sdk mocha test/mocha_remoteHub_bs_test.js --timeout=60000",
-    "postinstall": "npm update browserstack-node-sdk"
+    "postinstall": "npm update browserstack-node-sdk",
+    "mocha_localSelenium-test-browserstack": "browserstack-node-sdk node_modules/mocha/bin/mocha test/mocha_localSelenium_test.js",
+    "mocha-remoteSelenium-test-browserstack": "browserstack-node-sdk node_modules/mocha/bin/mocha test/mocha_remoteSelenium_test.js"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://"
