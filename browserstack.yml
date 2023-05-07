@@ -15,10 +15,10 @@ platforms:
     osVersion: 10
     browserName: Firefox
     browserVersion: latest
-  - os: Windows
-    osVersion: 10
-    browserName: IE
-    browserVersion: 11.0
+  - deviceName: Samsung Galaxy S23 Ultra
+    osVersion: 13.0
+    browserName: chrome
+    deviceOrientation: portrait
 parallelsPerPlatform: 2
 browserstackLocal: true
 buildName: SindhuP-Automate-MochaJS
