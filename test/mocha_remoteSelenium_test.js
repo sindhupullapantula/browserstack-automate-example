@@ -23,7 +23,19 @@ var buildEdgeDriver = function() {
     build();
 };
 
-const driverBuilders = [buildChromeDriver, buildEdgeDriver];
+var buildSafariDriver = function() {
+  const safariCapabilities = Capabilities.safari();
+  const safariOptions = {'args': ['--test-type', '--incognito']};
+  safariCapabilities.set('chromeOptions', safariOptions);
+  return new Builder().
+    forBrowser(Browser.SAFARI).
+    usingServer('http://localhost:9092/').
+    withCapabilities(safariCapabilities).
+    build();
+};
+
+
+const driverBuilders = [buildChromeDriver, buildEdgeDriver, buildSafariDriver];
 
 driverBuilders.map((buildDriver) => {
     describe('Open BrowserStack Live page in incognito mode', async function() {
@@ -61,7 +73,7 @@ driverBuilders.map((buildDriver) => {
         }));
     
         const errorMessageText =  await driver.findElement(By.css('#user_email_login + .error-msg')).getText();
-        assert.equal(errorMessageText, "Invalid Email");
+        assert.equal(errorMessageText.trim(), "Invalid Email");
       });
     
         

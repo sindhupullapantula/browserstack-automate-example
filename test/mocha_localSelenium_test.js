@@ -30,7 +30,17 @@ var buildEdgeDriver = function() {
     build();
 };
 
-const driverBuilders = [buildChromeDriver, buildEdgeDriver];
+var buildSafariDriver = function() {
+  const safariCapabilities = Capabilities.safari();
+  const safariOptions = {'args': ['--test-type', '--incognito']};
+  safariCapabilities.set('chromeOptions', safariOptions);
+  return new Builder().
+    forBrowser(Browser.SAFARI).
+    withCapabilities(safariCapabilities).
+    build();
+};
+
+const driverBuilders = [buildSafariDriver, buildChromeDriver, buildEdgeDriver];
 
 driverBuilders.map((buildDriver) => {
   describe('Open BrowserStack Live page in incognito mode', async function() {

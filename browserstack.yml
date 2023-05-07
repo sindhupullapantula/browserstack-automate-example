@@ -7,11 +7,19 @@ platforms:
     osVersion: Ventura
     browserName: Edge
     browserVersion: latest
-  - deviceName: Samsung Galaxy Tab S7
-    osVersion: 10.0
-    browserName: chrome
-    deviceOrientation: portrait
-parallelsPerPlatform: 1
+  - os: OS X
+    osVersion: Big Sur
+    browserName: Safari
+    browserVersion: 14.1
+  - os: Windows
+    osVersion: 10
+    browserName: Firefox
+    browserVersion: latest
+  - os: Windows
+    osVersion: 10
+    browserName: IE
+    browserVersion: 11.0
+parallelsPerPlatform: 2
 browserstackLocal: true
 buildName: SindhuP-Automate-MochaJS
 projectName: SindhuP-Automate-MochaJS-Test-Project

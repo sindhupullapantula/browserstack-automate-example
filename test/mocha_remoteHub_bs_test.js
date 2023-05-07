@@ -49,7 +49,7 @@ describe('Open BrowserStack Live page in incognito mode', async function() {
     }));
 
     const errorMessageText =  await driver.findElement(By.css('#user_email_login + .error-msg')).getText();
-    assert.equal(errorMessageText, "Invalid Email");
+    assert.equal(errorMessageText.trim(), "Invalid Email");
   });
 
     
